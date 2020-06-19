@@ -15,6 +15,7 @@
 * P14: Data out (CX20017の10ピン)
 * P16: 2xLRCK out (CX20017の8,12ピン)
 
+ミュート回路とエンファシス回路を切るのを忘れずに。
 
 ## Acknowledgements
 
