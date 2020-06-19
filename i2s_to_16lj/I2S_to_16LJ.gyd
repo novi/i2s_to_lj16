@@ -1,0 +1,30 @@
+Pin Freeze File:  version P.20131013
+
+9572XL44VQ XC9572XL-10-VQ44
+bck S:PIN6
+data S:PIN5
+lrck S:PIN7
+bck_out S:PIN12
+data_out S:PIN14
+lrck2_out S:PIN16
+lrck_out S:PIN13
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 delay/lrck_before lrck_changed data_counter<0> data_fifo<5>
+		 data_fifo<4> data_fifo<3> data_fifo<2> data_fifo<1>
+		 data_fifo<15> data_fifo<14> data_fifo<13> data_fifo<12>
+		 data_fifo<11> data_fifo<10> data_counter<4> data_counter<3>
+		 data_counter<2> data_counter<1>
+PARTITION FB2_8 lrck_before lrck_32LJ lrck2x/lrck_fifo<1> lrck2x/lrck_fifo<0>
+		 lrck2x/delayed_lrck I2S_to_32LJ/lrck_before data_fifo<9> data_fifo<8>
+		 data_fifo<7> data_fifo<6> data_fifo<0>
+PARTITION FB3_11 bck_out_OBUF
+PARTITION FB3_13 EXP6_ lrck_out_OBUF data_out_OBUF EXP7_
+		 lrck2_out_OBUF
+
+PARTITION FB4_13 lrck2x/lrck_fifo<7> lrck2x/lrck_fifo<6> lrck2x/lrck_fifo<5> lrck2x/lrck_fifo<4>
+		 lrck2x/lrck_fifo<3> lrck2x/lrck_fifo<2>
+

@@ -1,0 +1,666 @@
+MDF Database:  version 1.0
+MDF_INFO | I2S_to_16LJ | XC9572XL-10-VQ44
+MACROCELL | 1 | 17 | data_fifo<0>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 2 | 1 | 17 | 2 | 16
+INPUTS | 5 | data  | lrck_32LJ  | lrck_before  | data_fifo<0>  | bck
+INPUTMC | 3 | 1 | 8 | 1 | 7 | 1 | 17
+INPUTP | 2 | 29 | 31
+EQ | 5 | 
+   data_fifo<0>.D = data & lrck_32LJ & !lrck_before
+	# data & !lrck_32LJ & lrck_before
+	# data_fifo<0> & lrck_32LJ & lrck_before
+	# data_fifo<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<0>.CLK = bck;
+
+MACROCELL | 0 | 13 | data_fifo<10>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 13 | 2 | 15
+INPUTS | 10 | data  | data_fifo<10>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<10>.T = data & !data_fifo<10> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<10> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<10> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<10> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<10>.CLK = bck;
+
+MACROCELL | 0 | 12 | data_fifo<11>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 12 | 2 | 13
+INPUTS | 10 | data  | data_fifo<11>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 12 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<11>.T = data & !data_fifo<11> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<11> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<11> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<11> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<11>.CLK = bck;
+
+MACROCELL | 0 | 11 | data_fifo<12>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 11 | 2 | 16
+INPUTS | 10 | data  | data_fifo<12>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 11 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<12>.T = data & !data_fifo<12> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<12> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<12> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<12> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<12>.CLK = bck;
+
+MACROCELL | 0 | 10 | data_fifo<13>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 10 | 2 | 14
+INPUTS | 10 | data  | data_fifo<13>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 10 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<13>.T = data & !data_fifo<13> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<13> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<13> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<13> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<13>.CLK = bck;
+
+MACROCELL | 0 | 9 | data_fifo<14>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 9 | 2 | 15
+INPUTS | 10 | data  | data_fifo<14>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 9 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<14>.T = data & !data_fifo<14> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<14> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<14> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<14> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<14>.CLK = bck;
+
+MACROCELL | 0 | 8 | data_fifo<15>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 8 | 2 | 13
+INPUTS | 10 | data  | data_fifo<15>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 8 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<15>.T = data & !data_fifo<15> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<15> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<15> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<15> & !data_counter<4> & 
+	data_counter<3> & data_counter<2> & data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<15>.CLK = bck;
+
+MACROCELL | 0 | 7 | data_fifo<1>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 7 | 2 | 14
+INPUTS | 10 | data  | data_fifo<1>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 7 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<1>.T = data & !data_fifo<1> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<1> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<1> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<1> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<1>.CLK = bck;
+
+MACROCELL | 0 | 6 | data_fifo<2>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 6 | 2 | 15
+INPUTS | 10 | data  | data_fifo<2>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 6 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<2>.T = data & !data_fifo<2> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<2> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<2> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<2> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<2>.CLK = bck;
+
+MACROCELL | 0 | 5 | data_fifo<3>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 5 | 2 | 13
+INPUTS | 10 | data  | data_fifo<3>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 5 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<3>.T = data & !data_fifo<3> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<3> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<3> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<3> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<3>.CLK = bck;
+
+MACROCELL | 0 | 4 | data_fifo<4>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 4 | 2 | 16
+INPUTS | 10 | data  | data_fifo<4>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 4 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<4>.T = data & !data_fifo<4> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<4> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<4> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<4> & !data_counter<4> & 
+	!data_counter<3> & !data_counter<2> & data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<4>.CLK = bck;
+
+MACROCELL | 0 | 3 | data_fifo<5>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 0 | 3 | 2 | 14
+INPUTS | 10 | data  | data_fifo<5>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 0 | 3 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<5>.T = data & !data_fifo<5> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<5> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<5> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<5> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<5>.CLK = bck;
+
+MACROCELL | 1 | 16 | data_fifo<6>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 1 | 16 | 2 | 15
+INPUTS | 10 | data  | data_fifo<6>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 1 | 16 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<6>.T = data & !data_fifo<6> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<6> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<6> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<6> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<6>.CLK = bck;
+
+MACROCELL | 1 | 15 | data_fifo<7>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 1 | 15 | 2 | 13
+INPUTS | 10 | data  | data_fifo<7>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 1 | 15 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<7>.T = data & !data_fifo<7> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<7> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<7> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<7> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<7>.CLK = bck;
+
+MACROCELL | 1 | 14 | data_fifo<8>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 1 | 14 | 2 | 15
+INPUTS | 10 | data  | data_fifo<8>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 1 | 14 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<8>.T = data & !data_fifo<8> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<8> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<8> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<8> & !data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<8>.CLK = bck;
+
+MACROCELL | 1 | 13 | data_fifo<9>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 2 | 1 | 13 | 2 | 14
+INPUTS | 10 | data  | data_fifo<9>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 8 | 1 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 2 | 29 | 31
+EQ | 13 | 
+   data_fifo<9>.T = data & !data_fifo<9> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# data & !data_fifo<9> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before
+	# !data & data_fifo<9> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & lrck_32LJ & lrck_before
+	# !data & data_fifo<9> & !data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1> & 
+	!data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_fifo<9>.CLK = bck;
+
+MACROCELL | 2 | 10 | bck_out_OBUF
+ATTRIBUTES | 8782626 | 0
+OUTPUTMC | 11 | 2 | 10 | 1 | 11 | 1 | 10 | 1 | 9 | 3 | 17 | 3 | 16 | 3 | 15 | 3 | 14 | 3 | 13 | 3 | 12 | 2 | 14
+INPUTS | 3 | bck_out  | lrck_changed  | bck
+INPUTMC | 2 | 2 | 10 | 0 | 1
+INPUTP | 1 | 31
+EQ | 2 | 
+   bck_out.D = !bck_out & !lrck_changed;
+   bck_out.CLK = !bck;
+
+MACROCELL | 2 | 13 | lrck_out_OBUF
+ATTRIBUTES | 8782626 | 0
+OUTPUTMC | 3 | 1 | 10 | 2 | 16 | 2 | 14
+INPUTS | 10 | data_fifo<11>  | bck  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_fifo<15>  | data_fifo<3>  | data_fifo<7>  | EXP6_.EXP
+INPUTMC | 9 | 0 | 12 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 8 | 0 | 5 | 1 | 15 | 2 | 12
+INPUTP | 1 | 31
+EXPORTS | 1 | 2 | 14
+IMPORTS | 1 | 2 | 12
+EQ | 11 | 
+   lrck_out.D = ;Imported pterms FB3_13
+	  delay/lrck_before;
+   lrck_out.CLK = !bck;
+    lrck_out_OBUF.EXP  =  data_fifo<11> & data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1>
+	# data_fifo<15> & data_counter<4> & 
+	data_counter<3> & data_counter<2> & data_counter<1>
+	# data_fifo<3> & !data_counter<4> & !data_counter<3> & 
+	data_counter<2> & data_counter<1>
+	# data_fifo<7> & !data_counter<4> & data_counter<3> & 
+	data_counter<2> & data_counter<1>
+
+MACROCELL | 0 | 14 | data_counter<4>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 20 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 16 | 1 | 15 | 1 | 14 | 1 | 13 | 0 | 14 | 2 | 14 | 2 | 13 | 2 | 15 | 2 | 16
+INPUTS | 8 | data_counter<4>  | lrck_32LJ  | lrck_before  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_counter<0>  | bck
+INPUTMC | 7 | 0 | 14 | 1 | 8 | 1 | 7 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2
+INPUTP | 1 | 31
+EQ | 7 | 
+   data_counter<4>.T = data_counter<4> & lrck_32LJ & !lrck_before
+	# data_counter<4> & !lrck_32LJ & lrck_before
+	# data_counter<3> & data_counter<2> & 
+	data_counter<1> & data_counter<0> & lrck_32LJ & lrck_before
+	# data_counter<3> & data_counter<2> & 
+	data_counter<1> & data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_counter<4>.CLK = bck;
+
+MACROCELL | 0 | 15 | data_counter<3>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 21 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 16 | 1 | 15 | 1 | 14 | 1 | 13 | 0 | 14 | 0 | 15 | 2 | 14 | 2 | 13 | 2 | 15 | 2 | 16
+INPUTS | 7 | data_counter<3>  | lrck_32LJ  | lrck_before  | data_counter<2>  | data_counter<1>  | data_counter<0>  | bck
+INPUTMC | 6 | 0 | 15 | 1 | 8 | 1 | 7 | 0 | 16 | 0 | 17 | 0 | 2
+INPUTP | 1 | 31
+EQ | 7 | 
+   data_counter<3>.T = data_counter<3> & lrck_32LJ & !lrck_before
+	# data_counter<3> & !lrck_32LJ & lrck_before
+	# data_counter<2> & data_counter<1> & 
+	data_counter<0> & lrck_32LJ & lrck_before
+	# data_counter<2> & data_counter<1> & 
+	data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_counter<3>.CLK = bck;
+
+MACROCELL | 0 | 16 | data_counter<2>
+ATTRIBUTES | 4326176 | 0
+OUTPUTMC | 22 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 16 | 1 | 15 | 1 | 14 | 1 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 2 | 14 | 2 | 13 | 2 | 15 | 2 | 16
+INPUTS | 6 | data_counter<2>  | lrck_32LJ  | lrck_before  | data_counter<1>  | data_counter<0>  | bck
+INPUTMC | 5 | 0 | 16 | 1 | 8 | 1 | 7 | 0 | 17 | 0 | 2
+INPUTP | 1 | 31
+EQ | 7 | 
+   data_counter<2>.T = data_counter<2> & lrck_32LJ & !lrck_before
+	# data_counter<2> & !lrck_32LJ & lrck_before
+	# data_counter<1> & data_counter<0> & lrck_32LJ & 
+	lrck_before
+	# data_counter<1> & data_counter<0> & !lrck_32LJ & 
+	!lrck_before;
+   data_counter<2>.CLK = bck;
+
+MACROCELL | 0 | 17 | data_counter<1>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 23 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 16 | 1 | 15 | 1 | 14 | 1 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 2 | 14 | 2 | 13 | 2 | 15 | 2 | 16
+INPUTS | 5 | data_counter<1>  | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 4 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 1 | 31
+EQ | 9 | 
+   data_counter<1>.D = data_counter<1> & !data_counter<0> & lrck_32LJ & 
+	lrck_before
+	# data_counter<1> & !data_counter<0> & !lrck_32LJ & 
+	!lrck_before
+	# !data_counter<1> & data_counter<0> & lrck_32LJ & 
+	lrck_before
+	# !data_counter<1> & data_counter<0> & !lrck_32LJ & 
+	!lrck_before;
+   data_counter<1>.CLK = bck;
+
+MACROCELL | 0 | 2 | data_counter<0>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 20 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 16 | 1 | 15 | 1 | 14 | 1 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2
+INPUTS | 4 | data_counter<0>  | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 3 | 0 | 2 | 1 | 8 | 1 | 7
+INPUTP | 1 | 31
+EQ | 3 | 
+   data_counter<0>.D = !data_counter<0> & lrck_32LJ & lrck_before
+	# !data_counter<0> & !lrck_32LJ & !lrck_before;
+   data_counter<0>.CLK = bck;
+
+MACROCELL | 1 | 8 | lrck_32LJ
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 24 | 1 | 17 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 16 | 1 | 15 | 1 | 14 | 1 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 0 | 0 | 1 | 7 | 0 | 1
+INPUTS | 2 | I2S_to_32LJ/lrck_before  | bck
+INPUTMC | 1 | 1 | 12
+INPUTP | 1 | 31
+EQ | 2 | 
+   lrck_32LJ.D = I2S_to_32LJ/lrck_before;
+   lrck_32LJ.CLK = !bck;
+
+MACROCELL | 1 | 12 | I2S_to_32LJ/lrck_before
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 1 | 8
+INPUTS | 2 | lrck  | bck
+INPUTP | 2 | 33 | 31
+EQ | 2 | 
+   I2S_to_32LJ/lrck_before.D = lrck;
+   I2S_to_32LJ/lrck_before.CLK = bck;
+
+MACROCELL | 0 | 0 | delay/lrck_before
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 2 | 12
+INPUTS | 2 | lrck_32LJ  | bck
+INPUTMC | 1 | 1 | 8
+INPUTP | 1 | 31
+EQ | 2 | 
+   delay/lrck_before.D = lrck_32LJ;
+   delay/lrck_before.CLK = bck;
+
+MACROCELL | 1 | 11 | lrck2x/delayed_lrck
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 2 | 16
+INPUTS | 2 | lrck2x/lrck_fifo<7>  | bck_out
+INPUTMC | 2 | 3 | 12 | 2 | 10
+EQ | 2 | 
+   lrck2x/delayed_lrck.D = lrck2x/lrck_fifo<7>;
+   lrck2x/delayed_lrck.CLK = !bck_out;
+
+MACROCELL | 1 | 10 | lrck2x/lrck_fifo<0>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 1 | 9
+INPUTS | 2 | lrck_out  | bck_out
+INPUTMC | 2 | 2 | 13 | 2 | 10
+EQ | 2 | 
+   lrck2x/lrck_fifo<0>.D = lrck_out;
+   lrck2x/lrck_fifo<0>.CLK = bck_out;
+
+MACROCELL | 1 | 9 | lrck2x/lrck_fifo<1>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 3 | 17
+INPUTS | 2 | lrck2x/lrck_fifo<0>  | bck_out
+INPUTMC | 2 | 1 | 10 | 2 | 10
+EQ | 2 | 
+   lrck2x/lrck_fifo<1>.D = lrck2x/lrck_fifo<0>;
+   lrck2x/lrck_fifo<1>.CLK = bck_out;
+
+MACROCELL | 3 | 17 | lrck2x/lrck_fifo<2>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 3 | 16
+INPUTS | 2 | lrck2x/lrck_fifo<1>  | bck_out
+INPUTMC | 2 | 1 | 9 | 2 | 10
+EQ | 2 | 
+   lrck2x/lrck_fifo<2>.D = lrck2x/lrck_fifo<1>;
+   lrck2x/lrck_fifo<2>.CLK = bck_out;
+
+MACROCELL | 3 | 16 | lrck2x/lrck_fifo<3>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 3 | 15
+INPUTS | 2 | lrck2x/lrck_fifo<2>  | bck_out
+INPUTMC | 2 | 3 | 17 | 2 | 10
+EQ | 2 | 
+   lrck2x/lrck_fifo<3>.D = lrck2x/lrck_fifo<2>;
+   lrck2x/lrck_fifo<3>.CLK = bck_out;
+
+MACROCELL | 3 | 15 | lrck2x/lrck_fifo<4>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 3 | 14
+INPUTS | 2 | lrck2x/lrck_fifo<3>  | bck_out
+INPUTMC | 2 | 3 | 16 | 2 | 10
+EQ | 2 | 
+   lrck2x/lrck_fifo<4>.D = lrck2x/lrck_fifo<3>;
+   lrck2x/lrck_fifo<4>.CLK = bck_out;
+
+MACROCELL | 3 | 14 | lrck2x/lrck_fifo<5>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 3 | 13
+INPUTS | 2 | lrck2x/lrck_fifo<4>  | bck_out
+INPUTMC | 2 | 3 | 15 | 2 | 10
+EQ | 2 | 
+   lrck2x/lrck_fifo<5>.D = lrck2x/lrck_fifo<4>;
+   lrck2x/lrck_fifo<5>.CLK = bck_out;
+
+MACROCELL | 3 | 13 | lrck2x/lrck_fifo<6>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 3 | 12
+INPUTS | 2 | lrck2x/lrck_fifo<5>  | bck_out
+INPUTMC | 2 | 3 | 14 | 2 | 10
+EQ | 2 | 
+   lrck2x/lrck_fifo<6>.D = lrck2x/lrck_fifo<5>;
+   lrck2x/lrck_fifo<6>.CLK = bck_out;
+
+MACROCELL | 3 | 12 | lrck2x/lrck_fifo<7>
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 1 | 11
+INPUTS | 2 | lrck2x/lrck_fifo<6>  | bck_out
+INPUTMC | 2 | 3 | 13 | 2 | 10
+EQ | 2 | 
+   lrck2x/lrck_fifo<7>.D = lrck2x/lrck_fifo<6>;
+   lrck2x/lrck_fifo<7>.CLK = bck_out;
+
+MACROCELL | 1 | 7 | lrck_before
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 22 | 1 | 17 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 16 | 1 | 15 | 1 | 14 | 1 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 0 | 1
+INPUTS | 2 | lrck_32LJ  | bck
+INPUTMC | 1 | 1 | 8
+INPUTP | 1 | 31
+EQ | 2 | 
+   lrck_before.D = lrck_32LJ;
+   lrck_before.CLK = bck;
+
+MACROCELL | 0 | 1 | lrck_changed
+ATTRIBUTES | 8520480 | 0
+OUTPUTMC | 1 | 2 | 10
+INPUTS | 3 | lrck_32LJ  | lrck_before  | bck
+INPUTMC | 2 | 1 | 8 | 1 | 7
+INPUTP | 1 | 31
+EQ | 3 | 
+   lrck_changed.D = lrck_32LJ
+	$ lrck_before;
+   lrck_changed.CLK = bck;
+
+MACROCELL | 2 | 14 | data_out_OBUF
+ATTRIBUTES | 8651554 | 0
+INPUTS | 11 | data_fifo<9>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_fifo<1>  | data_fifo<5>  | data_fifo<13>  | lrck_out_OBUF.EXP  | EXP7_.EXP  | bck_out
+INPUTMC | 11 | 1 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 7 | 0 | 3 | 0 | 10 | 2 | 13 | 2 | 15 | 2 | 10
+IMPORTS | 2 | 2 | 13 | 2 | 15
+EQ | 36 | 
+   data_out.D = data_fifo<13> & data_counter<4> & 
+	data_counter<3> & !data_counter<2> & data_counter<1>
+	# data_fifo<1> & !data_counter<4> & !data_counter<3> & 
+	!data_counter<2> & data_counter<1>
+	# data_fifo<5> & !data_counter<4> & data_counter<3> & 
+	!data_counter<2> & data_counter<1>
+	# data_fifo<9> & data_counter<4> & !data_counter<3> & 
+	!data_counter<2> & data_counter<1>
+;Imported pterms FB3_14
+	# data_fifo<11> & data_counter<4> & 
+	!data_counter<3> & data_counter<2> & data_counter<1>
+	# data_fifo<15> & data_counter<4> & 
+	data_counter<3> & data_counter<2> & data_counter<1>
+	# data_fifo<3> & !data_counter<4> & !data_counter<3> & 
+	data_counter<2> & data_counter<1>
+	# data_fifo<7> & !data_counter<4> & data_counter<3> & 
+	data_counter<2> & data_counter<1>
+;Imported pterms FB3_16
+	# data_fifo<10> & data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1>
+	# data_fifo<14> & data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1>
+	# data_fifo<2> & !data_counter<4> & !data_counter<3> & 
+	data_counter<2> & !data_counter<1>
+	# data_fifo<6> & !data_counter<4> & data_counter<3> & 
+	data_counter<2> & !data_counter<1>
+	# data_fifo<8> & data_counter<4> & !data_counter<3> & 
+	!data_counter<2> & !data_counter<1>
+;Imported pterms FB3_17
+	# data_fifo<0> & !data_counter<4> & !data_counter<3> & 
+	!data_counter<2> & !data_counter<1>
+	# data_fifo<12> & data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1>
+	# data_fifo<4> & !data_counter<4> & data_counter<3> & 
+	!data_counter<2> & !data_counter<1>;
+   data_out.CLK = !bck_out;
+
+MACROCELL | 2 | 16 | lrck2_out_OBUF
+ATTRIBUTES | 264962 | 0
+OUTPUTMC | 1 | 2 | 15
+INPUTS | 9 | lrck2x/delayed_lrck  | lrck_out  | data_fifo<0>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_fifo<12>  | data_fifo<4>
+INPUTMC | 9 | 1 | 11 | 2 | 13 | 1 | 17 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 11 | 0 | 4
+EXPORTS | 1 | 2 | 15
+EQ | 8 | 
+   !lrck2_out = lrck2x/delayed_lrck
+	$ lrck_out;
+    lrck2_out_OBUF.EXP  =  data_fifo<0> & !data_counter<4> & !data_counter<3> & 
+	!data_counter<2> & !data_counter<1>
+	# data_fifo<12> & data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1>
+	# data_fifo<4> & !data_counter<4> & data_counter<3> & 
+	!data_counter<2> & !data_counter<1>
+
+MACROCELL | 2 | 12 | EXP6_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 13
+INPUTS | 1 | delay/lrck_before
+INPUTMC | 1 | 0 | 0
+EXPORTS | 1 | 2 | 13
+EQ | 1 | 
+       EXP6_.EXP  =  delay/lrck_before
+
+MACROCELL | 2 | 15 | EXP7_
+ATTRIBUTES | 2048 | 0
+OUTPUTMC | 1 | 2 | 14
+INPUTS | 10 | data_fifo<10>  | data_counter<4>  | data_counter<3>  | data_counter<2>  | data_counter<1>  | data_fifo<14>  | data_fifo<2>  | data_fifo<6>  | data_fifo<8>  | lrck2_out_OBUF.EXP
+INPUTMC | 10 | 0 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 9 | 0 | 6 | 1 | 16 | 1 | 14 | 2 | 16
+EXPORTS | 1 | 2 | 14
+IMPORTS | 1 | 2 | 16
+EQ | 17 | 
+       EXP7_.EXP  =  data_fifo<10> & data_counter<4> & 
+	!data_counter<3> & data_counter<2> & !data_counter<1>
+	# data_fifo<14> & data_counter<4> & 
+	data_counter<3> & data_counter<2> & !data_counter<1>
+	# data_fifo<2> & !data_counter<4> & !data_counter<3> & 
+	data_counter<2> & !data_counter<1>
+	# data_fifo<6> & !data_counter<4> & data_counter<3> & 
+	data_counter<2> & !data_counter<1>
+	# data_fifo<8> & data_counter<4> & !data_counter<3> & 
+	!data_counter<2> & !data_counter<1>
+;Imported pterms FB3_17
+	# data_fifo<0> & !data_counter<4> & !data_counter<3> & 
+	!data_counter<2> & !data_counter<1>
+	# data_fifo<12> & data_counter<4> & 
+	data_counter<3> & !data_counter<2> & !data_counter<1>
+	# data_fifo<4> & !data_counter<4> & data_counter<3> & 
+	!data_counter<2> & !data_counter<1>
+
+PIN | data | 64 | 0 | N/A | 29 | 16 | 1 | 17 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 16 | 1 | 15 | 1 | 14 | 1 | 13
+PIN | bck | 64 | 0 | N/A | 31 | 28 | 1 | 17 | 0 | 13 | 0 | 12 | 0 | 11 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 7 | 0 | 6 | 0 | 5 | 0 | 4 | 0 | 3 | 1 | 16 | 1 | 15 | 1 | 14 | 1 | 13 | 2 | 10 | 2 | 13 | 0 | 14 | 0 | 15 | 0 | 16 | 0 | 17 | 0 | 2 | 1 | 8 | 1 | 12 | 0 | 0 | 1 | 7 | 0 | 1
+PIN | lrck | 64 | 0 | N/A | 33 | 1 | 1 | 12
+PIN | bck_out | 536871040 | 0 | N/A | 46
+PIN | lrck_out | 536871040 | 0 | N/A | 49
+PIN | data_out | 536871040 | 0 | N/A | 50
+PIN | lrck2_out | 536871040 | 0 | N/A | 52
