@@ -1,5 +1,6 @@
 # i2s_to_lj16
 
+* ISE WebPACK プロジェクト
 * CPLD XC9572XL-VQ44 で動作
 * 2xWCK を出力 (`lrck2_out`)
 
