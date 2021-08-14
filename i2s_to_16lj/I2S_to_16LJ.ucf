@@ -5,7 +5,7 @@ NET "bck"  LOC = "P6"  ;
 NET "bck_out"  LOC = "P12"  ; 
 NET "data"  LOC = "P5"  ; 
 NET "data_out"  LOC = "P14"  ; 
-NET "lrck"  LOC = "P7"  ; 
+NET "lrck_in"  LOC = "P7"  ; 
 NET "lrck2_out"  LOC = "P16"  ;
 NET "lrck_out"  LOC = "P13"  ; 
 

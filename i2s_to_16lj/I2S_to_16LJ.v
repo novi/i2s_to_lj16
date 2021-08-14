@@ -1,18 +1,20 @@
 //I2S‚ğ16LJ‚É•ÏŠ·
-module I2S_to_16LJ(bck, data, lrck, bck_out, data_out, lrck_out, lrck2_out);
+module I2S_to_16LJ(bck, data, lrck_in, bck_out, data_out, lrck_out, lrck2_out);
 
     input bck;
     input data;
-    input lrck;
+    input lrck_in;
     output bck_out;
     output data_out;
     output lrck_out;
-	 output lrck2_out;
+	output lrck2_out;
 
     reg data_out = 0;           
     reg[4:0] data_counter = 0 ; //Œ³‚ÌI2S‚É‚¨‚¯‚é‰½bit‚ß‚ÌDATA‚©
     reg[31:0] data_fifo = 0;    //Œ³‚ÌI2S DATA (32bit) ‚ğ 1sample•ªŠi”[‚·‚é
-
+    
+    wire lrck;
+    assign lrck = ~lrck_in;
     //LRCK ‚ğ Œ³X‚ÌBCK2üŠú•ª’x‚ç‚¹‚é
     wire lrck_32LJ;
     delay_1BCK I2S_to_32LJ (lrck, bck, lrck_32LJ);
